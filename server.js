@@ -21,10 +21,6 @@ app.get('/todos/:slug', function (request, response) {
 })
 
 app.post('/todos', function (request, response) {
-  if (!todos[request.params.slug]) {
-    response.status(404).end('sorry, no such todos found: ' + request.params.slug)
-    return
-  }
   var slug = request.body.job.trim().toLowerCase().split(' ').join('-')
   products[slug] = {
     job: request.body.job,
